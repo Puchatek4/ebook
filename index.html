@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animki.css">
+</head>
+<body>
+    <header>
+        <H1>E-book</H1>
+        <Div class="lista">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="e-book.html" target="_blank"> odnosnik 1</a>
+                    </li>
+                    <li>
+                        <a href="e-book.html" target="_blank">odnosnik 2</a>
+                    </li>
+                    <li>
+                        <a href="http://chatgpt.com" target="_blank">odnosnik 3</a>
+                    </li>
+                    <li>
+                        <a href="http://google.pl" target="_blank">odnosnik 4</a>
+                    </li>
+                </ul>
+            </nav>
+        </Div>
+    </header>
+    <main>
+        <article class="article1"> 
+            <img src="wazniak.jpg" alt="jakiś profesorrek" class="wazniak">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere, non fuga voluptatibus quae nihil accusantium repellendus modi in enim ad, et ab obcaecati pariatur velit nam! Deleniti, quod ipsa?</p>
+        </article>
+        
+        <div class="wysrodkowanie">
+            <article class="promocje">
+                <div class="promka active">siema</div>
+                <div class="promka">elo</div>
+                <div class="promka">dzień dobry</div>
+                <div class="promka">dowidzenia</div>  
+                <button id="left"><</button>
+                <button id="right">></button>
+                
+            </article>
+        </div>
+        <Article>
+            
+        </Article>
+        <article class="products">
+            <section class="ebook" id="pr1">
+                <img src="planowanie.jpg" alt="planowanie">
+                <div>Skuteczne planowanie dnia</div>
+            </section>
+            <section class="ebook" id="pr2">
+                <img src="planowanie.jpg" alt="">
+                <div>Sport to zdrowie</div>
+            </section>
+            <section class="ebook" id="pr3">
+                <img src="planowanie.jpg" alt="">
+                <div>Jak zbudować markę osobistą</div>
+            </section>
+            <section class="ebook" id="pr4">
+                <img src="planowanie.jpg" alt="">
+                <div>Excel i AI w pracy biurowej – praktyczny przewodnik</div>
+            </section>
+            <section class="ebook" id="pr5">
+                <img src="planowanie.jpg" alt="">
+                <div>Jak zacząć trenować w domu bez sprzętu</div>
+            </section>
+            <section class="ebook" id="pr6">
+                <img src="planowanie.jpg" alt="">
+                <div>Fotografia smartfonem – jak robić zdjęcia, które wyglądają profesjonalnie</div>
+            </section>
+        </article>
+    </main>
+    <div class="klik-czat">
+        <div class="czat"></div>
+    </div>
+    <footer>
+        Adam Kopeć 2025
+    </footer>
+</body>
+<script>
+    const slides = document.querySelectorAll('.promka');
+    let index = 0
+
+    function view(n){
+        slides.forEach(promka => promka.classList.remove('active'));
+        slides[n].classList.add('active');
+    }
+    const left = document.getElementById('left')
+    const right = document.getElementById('right')
+    right.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        view(index)
+    });
+    left.addEventListener("click", ()=>{
+        index = (index - 1 + slides.length) % slides.length;
+        view(index)
+    } );
+    
+</script>
+</html>

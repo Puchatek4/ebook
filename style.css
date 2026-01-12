@@ -1,0 +1,167 @@
+body{
+    background-color: #F5F3E7;
+    margin: 0;
+}
+header{
+    display: flex;
+    position: relative;
+    background-color: #6daa6c7e;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 60px;
+}
+.lista{
+    background-color: #2D4A3E;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+        box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+}
+.lista:hover ul{
+    display: flex;
+}
+li{
+    list-style-type: none;
+    padding: 20px;
+}
+li>a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+ul{
+    position: absolute;
+    right: 40px;
+    top: 0;
+    background-color: #2D4A3E;
+    border-radius: 20px;
+    display: none;
+    flex-flow: column wrap;
+    place-content: center;
+    padding:30px;
+
+}
+.wazniak{
+    width: 400px;
+    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    animation: zlewa 2s ease-in-out forwards;
+}
+.article1{
+    margin: 30px;
+    display: flex;
+}
+.article1 p{
+    width: 600px;
+    margin: 70px;
+    opacity: 0;
+    animation: zlewa 2s 2s ease-in-out forwards;
+}
+.promocje{
+    height: 400px;
+    width: 85%;
+    background-color: #6daa6c88;
+    position: relative;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+}
+.promka{
+    opacity: 0;
+    position: absolute;
+}
+.promka.active{
+    opacity: 1;
+}
+.wysrodkowanie{
+    display: flex;
+    place-content: center;
+}
+#left{
+    position: absolute;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+#right{
+    position: absolute;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.ebook{
+    padding: 30px;
+    width: 300px;
+    background-color: #2D4A3E;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    animation: produkty 20s ease-in-out forwards;
+}
+#pr1{
+    animation: zprawa 1s ease-in-out forwards;
+    opacity: 0;
+    
+}
+#pr2{
+    animation: zprawa 1s 1s ease-in-out forwards;
+    opacity: 0;
+}
+#pr3{
+    animation: zprawa 1s 2s ease-in-out forwards;
+    opacity: 0;
+}
+#pr4{
+    animation: zprawa 1s 3s ease-in-out forwards;
+    opacity: 0;
+}
+#pr5{
+    animation: zprawa 1s 4s ease-in-out forwards;
+    opacity: 0;
+}
+#pr6{
+    animation: zprawa 1s 5s ease-in-out forwards;
+    opacity: 0;
+}
+.products{
+    display: flex;
+    margin: 200px;
+    justify-content: space-evenly;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.ebook img{
+    width: 300px;
+}
+.klik-czat{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #2D4A3E;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.czat{
+    position: absolute;
+    display: none;
+    right: 20px;
+    bottom: 20px;
+    width: 400px;
+    height: 600px;
+    background-color: #6daa6c88;
+
+}
+.klik-czat:hover .czat{
+    display: block;
+}
+footer{
+    background-color: #6daa6c7e;
+    display: flex;
+    place-content: center;
+    padding: 10px;
+
+}
