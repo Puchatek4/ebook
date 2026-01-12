@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animki.css">
+</head>
+<body>
+    <header>
+        <H1>E-book</H1>
+        <Div class="lista">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="e-book.html" target="_blank">ebook</a>
+                    </li>
+                    <li>
+                        <a href="e-book.html">ebook</a>
+                    </li>
+                    <li>
+                        <a href="http://chatgpt.com" target="_blank">chat</a>
+                    </li>
+                    <li>
+                        <a href="http://google.pl" target="_blank">google</a>
+                    </li>
+                </ul>
+            </nav>
+        </Div>
+    </header>
+    <main class="main-logowanie">
+        <article class="logowanie">
+            <H3>Logowanie</H3>
+            <label class='label-logowanie'>Nazwa</label>
+            <input type="text" placeholder="Wpisz nazwe użytkownika" id="log"  class="input-logowanie">
+            <label class="label-logowanie">Hasło</label>
+            <input type="password" placeholder="Wpisz hasło" id="haslo" class="input-logowanie">
+            <input type="button" value="Zaloguj się" onclick="logowanie()" id="dalej" class="button-logowanie">
+        </article>
+        <script>
+            function logowanie(){
+                const log = document.getElementById('log').value;
+                const haslo = document.getElementById('haslo').value;
+
+                if(log === 'Adam' && haslo === 'Adam'){
+                    window.open('zalogowany.html')
+                }
+                else{
+                    alert('żle')
+                }
+            }
+        </script>
+    </main>
+</html>
