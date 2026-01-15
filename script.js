@@ -57,18 +57,13 @@ function togglemenu(e){
 burger.addEventListener('click', togglemenu);
 burger.addEventListener('touchstart', togglemenu);
 
-document.addEventListener("click", (e) => {
-    if (!burger.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove("active");
-    }
-});
-
-document.addEventListener("touchstart", (e) => {
-    if (!burger.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove("active");
-    }
-});
-
 menu.addEventListener("click", (e) => {
     e.stopPropagation();
 });
+
+document.addEventListener('click', () =>{
+    menu.classList.remove('active');
+});
+document.addEventListener('touchstart', () => {
+    menu.classList.remove('active');
+})
