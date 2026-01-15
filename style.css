@@ -277,7 +277,7 @@ footer{
         flex-flow: column wrap;
         place-content: center;
         padding:30px;
-        z-index: 999;
+
     }
     ul.active{
         display: flex;
