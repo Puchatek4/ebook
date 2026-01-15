@@ -38,18 +38,6 @@
             <input type="password" placeholder="Wpisz hasło" id="haslo" class="input-logowanie">
             <input type="button" value="Zaloguj się" onclick="logowanie()" id="dalej" class="button-logowanie">
         </article>
-        <script>
-            function logowanie(){
-                const log = document.getElementById('log').value;
-                const haslo = document.getElementById('haslo').value;
-
-                if(log === 'Adam' && haslo === 'Adam'){
-                    window.open('zalogowany.html')
-                }
-                else{
-                    alert('żle')
-                }
-            }
-        </script>
+        <script src="script.js"></script>
     </main>
 </html>

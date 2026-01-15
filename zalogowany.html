@@ -44,8 +44,8 @@
                 <div class="promka">elo</div>
                 <div class="promka">dzień dobry</div>
                 <div class="promka">dowidzenia</div>  
-                <button id="left"><</button>
-                <button id="right">></button>
+                <button id="left" class="strzalki"><</button>
+                <button id="right" class="strzalki">></button>
                 
             </article>
         </div>
@@ -86,24 +86,5 @@
         Adam Kopeć 2025
     </footer>
 </body>
-<script>
-    const slides = document.querySelectorAll('.promka');
-    let index = 0
-
-    function view(n){
-        slides.forEach(promka => promka.classList.remove('active'));
-        slides[n].classList.add('active');
-    }
-    const left = document.getElementById('left')
-    const right = document.getElementById('right')
-    right.addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        view(index)
-    });
-    left.addEventListener("click", ()=>{
-        index = (index - 1 + slides.length) % slides.length;
-        view(index)
-    } );
-    
-</script>
+<script src="script.js"></script>
 </html>
