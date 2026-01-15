@@ -39,3 +39,14 @@ document.addEventListener("click", (e) => {
         menu.classList.remove("active");
     }
 });
+burger.addEventListener("touchstart", () => {
+    menu.classList.toggle('active');
+});
+document.addEventListener("touchstart", (e) => {
+    if(!burger.contains(e.target)){
+        menu.classList.remove("active");
+    }
+});
+menu.addEventListener("click", (e) => {
+    e.preventDefault();
+});
