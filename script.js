@@ -31,22 +31,44 @@ left.addEventListener("click", ()=>{
 const burger = document.getElementById('lista');
 const menu = document.getElementById('menu');
 
-burger.addEventListener("click", () => {
+// burger.addEventListener("click", () => {
+//     menu.classList.toggle('active');
+// });
+// document.addEventListener("click", (e) => {
+//     if(!burger.contains(e.target)){
+//         menu.classList.remove("active");
+//     }
+// });
+// burger.addEventListener("touchstart", () => {
+//     menu.classList.toggle('active');
+// });
+// document.addEventListener("touchstart", (e) => {
+//     if(!burger.contains(e.target)){
+//         menu.classList.remove("active");
+//     }
+// });
+// menu.addEventListener("click", (e) => {
+//     e.preventDefault();
+// });
+function togglemenu(e){
+    e.stopPropagation();
     menu.classList.toggle('active');
-});
+}
+burger.addEventListener('click', togglemenu);
+burger.addEventListener('touchstart', togglemenu);
+
 document.addEventListener("click", (e) => {
-    if(!burger.contains(e.target)){
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove("active");
     }
 });
-burger.addEventListener("touchstart", () => {
-    menu.classList.toggle('active');
-});
+
 document.addEventListener("touchstart", (e) => {
-    if(!burger.contains(e.target)){
+    if (!burger.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove("active");
     }
 });
+
 menu.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.stopPropagation();
 });
