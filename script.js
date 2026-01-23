@@ -60,6 +60,9 @@ burger.addEventListener('touchstart', togglemenu);
 menu.addEventListener("click", (e) => {
     e.stopPropagation();
 });
+menu.addEventListener("touchstart", (e) => {
+    e.stopPropagation();
+});
 
 document.addEventListener('click', () =>{
     menu.classList.remove('active_menu');
