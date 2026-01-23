@@ -52,7 +52,7 @@ const menu = document.getElementById('menu');
 // });
 function togglemenu(e){
     e.stopPropagation();
-    menu.classList.toggle('active');
+    menu.classList.toggle('active_menu');
 }
 burger.addEventListener('click', togglemenu);
 burger.addEventListener('touchstart', togglemenu);
@@ -62,8 +62,8 @@ menu.addEventListener("click", (e) => {
 });
 
 document.addEventListener('click', () =>{
-    menu.classList.remove('active');
+    menu.classList.remove('active_menu');
 });
 document.addEventListener('touchstart', () => {
-    menu.classList.remove('active');
+    menu.classList.remove('active_menu');
 })
