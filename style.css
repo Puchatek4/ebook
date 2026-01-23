@@ -286,7 +286,7 @@ footer{
         z-index: 30;
 
     }
-    ul.active{
+    ul.active_menu{
         display: flex;
     }
     .ebook{
