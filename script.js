@@ -69,4 +69,9 @@ document.addEventListener('click', () =>{
 });
 document.addEventListener('touchstart', () => {
     menu.classList.remove('active_menu');
-})
+});
+
+const darkmode = document.getElementById("darkmode")
+darkmode.addEventListener('click', () => {
+    body.classList.remove('dark');
+});
