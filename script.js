@@ -41,6 +41,9 @@ burger.addEventListener('touchstart', togglemenu);
 menu.addEventListener("click", (e) => {
     e.stopPropagation();
 });
+menu.addEventListener("touchstart", (e) => {
+    e.stopPropagation();
+});
 
 menu.addEventListener("touchstart", (e) => {
     e.stopPropagation();
@@ -51,12 +54,17 @@ document.addEventListener('click', () =>{
 });
 document.addEventListener('touchstart', () => {
     menu.classList.remove('active_menu');
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> a28d4a61ec573a38ff89d16d7a095cc5c6b00620
 
 const darkmode = document.getElementById("darkmode")
 darkmode.addEventListener('click', () => {
     body.classList.remove('dark');
 });
+<<<<<<< HEAD
 
 function create2(){
     const parentDiv = document.getElementById('rodzic');
@@ -100,3 +108,5 @@ function create2(){
     newimg.setAttribute('src', 'planowanie.jpg');
     newelement.appendChild(newimg);
 }
+=======
+>>>>>>> a28d4a61ec573a38ff89d16d7a095cc5c6b00620
