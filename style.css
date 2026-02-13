@@ -1,14 +1,46 @@
+:root {
+    --first-color: #6daa6c7e;
+    --secound-color: #6daa6c88;
+    --shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    --gradient_nr_1: radial-gradient(circle at 25% 25%, #95d5b2, transparent 40%),
+            radial-gradient(circle at 75% 75%, #74c69d, transparent 40%),
+            radial-gradient(circle at 50% 60%, #40916c, transparent 45%),
+            #081c15;
+    --text-main: #ecfdf5;
+    --text-secondary: #a7f3d0;
+    --text-muted: #6ee7b7;
+}
 body{
-    background-color: #F5F3E7;
+    background: var(--gradient_nr_1);
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(134,239,172,0.15),
+    transparent 50%
+  );
+  pointer-events: none;
 }
 header{
     display: flex;
     position: relative;
-    background-color: #6daa6c7e;
     justify-content: space-between;
     align-items: center;
     padding: 0px 60px;
+    height: 90px;
+    background: rgba(10, 40, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+main{
+    flex: 1;
 }
 a{
     text-decoration: none;
@@ -21,42 +53,6 @@ a{
     height: 3px;
     border-radius: 30px;
 }
-/* .lista{
-    /* pointer-events: none;
-    border: none;
-    background-color: transparent;
-
-} 
- .lista{
-    background-color: #2D4A3E;
-    width: 100px;
-    height: 50px;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
-}
-.lista:hover ul{
-    display: flex;
-}
-li{
-    list-style-type: none;
-    padding: 20px;
-}
-li>a{
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-ul{
-    position: absolute;
-    right: 40px;
-    top: -5px;
-    background-color: #2D4A3E;
-    border-radius: 20px;
-    display: none;
-    flex-flow: column wrap;
-    place-content: center;
-    padding:30px;
-} */
 ul{
     display: flex;
 }
@@ -65,18 +61,19 @@ li{
     padding: 10px 20px;
 }
 li:hover{
-    /* transform: translateY(-5px); */
     border-top: black 2px solid;
     border-bottom: black 2px solid;
 }
 li>a{
-    color: rgb(0, 0, 0);
+    color: var(--text-secondary);
     text-decoration: none;
+    line-height: 1.7;
 }
 .wazniak{
     width: 400px;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
     animation: zlewa 2s ease-in-out forwards;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
 }
 .article1{
     margin: 30px;
@@ -87,17 +84,21 @@ li>a{
     margin: 70px;
     opacity: 0;
     animation: zlewa 2s 2s ease-in-out forwards;
+    text-align: justify;
 }
 .promocje{
     height: 400px;
     width: 85%;
-    background-color: #6daa6c88;
     position: relative;
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    background: linear-gradient(
+    145deg,
+    rgba(134, 239, 172, 0.18),
+    rgba(16, 185, 129, 0.12)
+  );
 }
 .promka{
     opacity: 0;
@@ -115,6 +116,13 @@ li>a{
     width: 80px;
     height: 80px;
     border-radius: 50px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+}
+.strzalki:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.25);
 }
 #left{
     left: 30px;
@@ -122,14 +130,43 @@ li>a{
 #right{
     right: 30px;
 }
+.products{
+    display: flex;
+    margin: 200px;
+    justify-content: space-evenly;
+    gap: 50px;
+    flex-wrap: wrap;
+}
 .ebook{
-    padding: 30px;
-    width: 300px;
     background-color: #2D4A3E;
-    border-radius: 30px;
-    color: white;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
-    animation: produkty 20s ease-in-out forwards;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.ebook p{
+    width: 300px;
+}
+.ebook img{
+    width: 300px;
+    margin: 50px 0px;
+}
+.ebook:hover{
+    background-color: var(--secound-color);
+}
+.ebook input[type="button"]{
+    background-color: #fff;
+    width: 300px;
+    height: 50px;
+    margin: 10px;
+}
+.przyciski_ebook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #pr1{
     animation: zprawa 1s ease-in-out forwards;
@@ -156,16 +193,6 @@ li>a{
     animation: zprawa 1s 5s ease-in-out forwards;
     opacity: 0;
 }
-.products{
-    display: flex;
-    margin: 200px;
-    justify-content: space-evenly;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-.ebook img{
-    width: 300px;
-}
 .klik-czat{
     width: 50px;
     height: 50px;
@@ -182,7 +209,7 @@ li>a{
     bottom: 20px;
     width: 400px;
     height: 600px;
-    background-color: #6daa6c88;
+    background-color: var(--secound-color);
 
 }
 .klik-czat:hover .czat{
@@ -202,9 +229,9 @@ li>a{
     padding: 50px;
     justify-content: center;
     align-items: center;
-    background-color: #6daa6c88;
+    background-color: var(--secound-color);
     border-radius: 30px;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    box-shadow:  var(--shadow);
 }
 .input-logowanie{
     margin: 10px;
@@ -212,18 +239,18 @@ li>a{
     color: black;
     padding: 10px 30px;
     border-bottom: 2px solid black;
-    background-color: #6daa6c88;
+    background-color: var(--secound-color);
 }
 .input-logowanie:focus{
     border: black solid 2px;
     outline: none;
     border-radius: 20px;
-    background-color: #6daa6c88;
+    background-color: var(--secound-color);
 }
 .button-logowanie{
     padding: 10px 20px ;
     margin: 30px 0px 0px 0px;
-    box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782);
+    box-shadow: var(--shadow);
     background-color: rgb(140, 201, 149);
     border: black 2px solid;
 
@@ -231,8 +258,20 @@ li>a{
 .button-logowanie:hover{
     border: 2px red solid;
 }
+
+.archiwum{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+.archiwum img{
+    max-width: 650px;
+}
 footer{
-    background-color: #6daa6c7e;
+    background-color: var(--first-color);
     display: flex;
     place-content: center;
     padding: 10px;
@@ -250,21 +289,15 @@ footer{
         justify-content: center;
     }
     .lista{
-    background-image: url('hamburger2.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 30px;
-    width: 50px;
-    height: 50px;
-    /* border-radius: 20px; */
-    cursor: pointer;
-    /* box-shadow: 5px 5px 10px rgba(90, 90, 90, 0.782); */
-    position: relative;
+        background-image: url('menu.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        position: relative;
     }
-    /* .lista:hover ul{
-        display: flex;
-    } */
     li{
         list-style-type: none;
         padding: 20px;
@@ -286,18 +319,24 @@ footer{
         z-index: 30;
 
     }
-    ul.active{
+    ul.active_menu{
         display: flex;
     }
     .ebook{
         max-width: 70vw;
     }
     .ebook img{
-    max-width: 40vw;
+    max-width: 50vw;
     }
     .promocje{
         border-radius: 0px;
         width: 100vw;
         height: 200px;
+    }
+    .article1{
+        margin: 0;
+    }
+    .article1 p{
+        max-width: 100%;
     }
 }
